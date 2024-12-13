@@ -1,0 +1,12 @@
+Ejercicio:
+
+Tienes una lista de calificaciones de estudiantes. Escribe un programa que realice lo siguiente:
+
+Crea un arreglo con las calificaciones de 5 estudiantes (puedes elegir los valores que desees).
+Usa un ciclo for para recorrer el arreglo de calificaciones.
+Calcula el promedio de todas las calificaciones.
+Imprime el promedio.
+Después de calcular el promedio, imprime el mensaje "Aprobado" si la calificación promedio es mayor o igual a 6, o "Reprobado" si es menor que 6.
+Objetivo: Practicar cómo recorrer un arreglo con un ciclo for, realizar cálculos con los elementos del arreglo y tomar decisiones con condicionales.
+
+Este ejercicio te ayudará a familiarizarte con el uso de ciclos y arreglos de manera práctica.
