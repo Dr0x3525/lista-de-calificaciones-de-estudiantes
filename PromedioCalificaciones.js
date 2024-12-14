@@ -1,54 +1,39 @@
-
 function SacarPromedio(NotasEstudiantes) {
     
-    //console.log(NotasEstudiantes)
     let suma = 0;
     let promedio = 0;
     let notaMinima = 6;
     for (i = 0; i < NotasEstudiantes.length ; i++) {
 
-        //console.log(NotasEstudiantes[i])
         suma = suma + NotasEstudiantes[i]
-        promedio = suma / NotasEstudiantes.length 
     }
 
-    //console.log(suma)
-    //console.log(promedio)
+    promedio = suma / NotasEstudiantes.length 
+
 
     if (promedio >= notaMinima) {
-        console.log("El promedio esta en: " + promedio)
+        console.log("El promedio esta en: " + promedio.toFixed(2))
         console.log("los estudiantes  pasaron")
     }
     else {
-        console.log("El promedio esta en: " + promedio)
+        console.log("El promedio esta en: " + promedio.toFixed(2))
         console.log("los estudiantes no pasaron")
     }
 
 
 }
 
-function ValorNanNumero(Nota) {
-    while (isNaN(Nota)) {
-        Nota = prompt("Esto no es numero cambialo")
-        Nota = parseFloat(Nota)
-    }
-    
-    return Nota
-}
-
 function verificarSerNumeros(Nota) {
 
     Nota = parseFloat(Nota)
 
-    if (isNaN(Nota)) {
-        Nota = ValorNanNumero(Nota)
+    while (isNaN(Nota) || Nota < 0 || Nota > 10) {
+        Nota = parseFloat(prompt("Por favor, ingrese una nota válida entre 0 y 10:"));
     }
 
 
     return Nota
 }
-
-
 
 function AñadirNotas(NotasEstudiantes) { 
     let finalizar = true
@@ -58,9 +43,9 @@ function AñadirNotas(NotasEstudiantes) {
             NotasEstudiantes.push(Nota)
             console.log(NotasEstudiantes)
             if (NotasEstudiantes.length >= 5) {
-                TerminarPrograma = prompt("sI deseas agregar mas estudiante escriba Y")
-                TerminarPrograma = TerminarPrograma.toUpperCase()
-                if (TerminarPrograma != "Y") {
+                let DeseaContinuar = prompt("sI deseas agregar mas estudiante escriba Y")
+                DeseaContinuar = DeseaContinuar.toUpperCase()
+                if (DeseaContinuar != "Y") {
                     finalizar = false
                 }
                 
