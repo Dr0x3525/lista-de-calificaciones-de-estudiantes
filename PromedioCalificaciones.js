@@ -27,45 +27,51 @@ function SacarPromedio(NotasEstudiantes) {
 
 }
 
-function verificarSerNumeros(NotasEstudiantes) {
+function ValorNanNumero(Nota) {
+    while (isNaN(Nota)) {
+        Nota = prompt("Esto no es numero cambialo")
+        Nota = parseFloat(Nota)
+    }
     
-    //aqui se comprueban si los valores son o no numeros
+    return Nota
+}
+
+function verificarSerNumeros(Nota) {
+
+    Nota = parseFloat(Nota)
+
+    if (isNaN(Nota)) {
+        Nota = ValorNanNumero(Nota)
+    }
+
+
+    return Nota
 }
 
 
+
 function AñadirNotas(NotasEstudiantes) { 
-
-
     let finalizar = true
-
     while (finalizar === true) {
-
-        for (i=0;finalizar = true;i++) {
             let Nota = prompt("Cual es la nota del estudiante " )
+            Nota = verificarSerNumeros(Nota)
             NotasEstudiantes.push(Nota)
             console.log(NotasEstudiantes)
-            if (NotasEstudiantes.length > 5) {
-                TerminarPrograma = prompt("deseas agregar mas estudiante Y/N")
-                if (TerminarPrograma === "Y") {
-                    finalizar = true
+            if (NotasEstudiantes.length >= 5) {
+                TerminarPrograma = prompt("sI deseas agregar mas estudiante escriba Y")
+                TerminarPrograma = TerminarPrograma.toUpperCase()
+                if (TerminarPrograma != "Y") {
+                    finalizar = false
                 }
                 
             }
-        }
     }
 }
 
 function InicializacionDeVariables() {
-
-    
     let NotasEstudiantes = []
-
     AñadirNotas(NotasEstudiantes)
-
-    //verificarSerNumeros(NotasEstudiantes)
-
-    //console.log("Las notas de los estudiantes son: "+NotasEstudiantes)
-    //SacarPromedio(NotasEstudiantes)
+    SacarPromedio(NotasEstudiantes)
 
 }
 
