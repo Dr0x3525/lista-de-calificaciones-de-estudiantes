@@ -27,11 +27,45 @@ function SacarPromedio(NotasEstudiantes) {
 
 }
 
-function InicializacionDeVariables() {
+function verificarSerNumeros(NotasEstudiantes) {
     
-    let NotasEstudiantes = [5,4,6,8,4]
-    console.log("Las notas de los estudiantes son: "+NotasEstudiantes)
-    SacarPromedio(NotasEstudiantes)
+    //aqui se comprueban si los valores son o no numeros
+}
+
+
+function AñadirNotas(NotasEstudiantes) { 
+
+
+    let finalizar = true
+
+    while (finalizar === true) {
+
+        for (i=0;finalizar = true;i++) {
+            let Nota = prompt("Cual es la nota del estudiante " )
+            NotasEstudiantes.push(Nota)
+            console.log(NotasEstudiantes)
+            if (NotasEstudiantes.length > 5) {
+                TerminarPrograma = prompt("deseas agregar mas estudiante Y/N")
+                if (TerminarPrograma === "Y") {
+                    finalizar = true
+                }
+                
+            }
+        }
+    }
+}
+
+function InicializacionDeVariables() {
+
+    
+    let NotasEstudiantes = []
+
+    AñadirNotas(NotasEstudiantes)
+
+    //verificarSerNumeros(NotasEstudiantes)
+
+    //console.log("Las notas de los estudiantes son: "+NotasEstudiantes)
+    //SacarPromedio(NotasEstudiantes)
 
 }
 
